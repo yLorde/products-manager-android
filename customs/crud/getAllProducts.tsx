@@ -1,6 +1,6 @@
 import * as SQLite from 'expo-sqlite';
 
-export default async function allRows() {
+export default async function getAllProducts() {
     try {
         const db = await SQLite.openDatabaseAsync('produtos');
 

@@ -21,9 +21,10 @@ export default function bancoDeDados() {
 
     return (
         <SafeAreaProvider>
-            <SafeAreaView style={styles.container} edges={['top']}>
-                <ScrollView style={styles.scrollView}>
+            <SafeAreaView style={{ flex: 1, marginTop: StatusBar.currentHeight }} edges={['top']}>
+                <ScrollView>
 
+                    {/* QUANTIDADE TOTAL DE PRODUTOS EXISTENTES NA BASE DE DADOS */}
                     <View style={{ marginTop: 10 }}>
                         <View style={produtoCss.productWindow}>
                             <View style={produtoCss.productContent}>
@@ -33,6 +34,7 @@ export default function bancoDeDados() {
                         </View>
                     </View>
 
+                    {/* QUANTIDADE TOTAL DE PRODUTOS CADASTRADOS */}
                     <View style={{ marginTop: 5 }}>
                         <View style={produtoCss.productWindow}>
                             <View style={produtoCss.productContent}>
@@ -42,6 +44,7 @@ export default function bancoDeDados() {
                         </View>
                     </View>
 
+                    {/* LIMPAR BANCO DE DADOS (DROP DATABASE) */}
                     <View style={{ marginTop: 5 }}>
                         <View style={produtoCss.productWindow}>
                             <View style={produtoCss.productContent}>
@@ -56,6 +59,7 @@ export default function bancoDeDados() {
                         </View>
                     </View>
 
+                    {/* GERA UM ARQUIVO DE BACKUP PARA GARANTIR QUE OS PRODUTOS NÃO SERÃO PERDIDOS */}
                     <View style={{ marginTop: 5 }}>
                         <View style={produtoCss.productWindow}>
                             <View style={produtoCss.productContent}>
@@ -69,6 +73,7 @@ export default function bancoDeDados() {
                         </View>
                     </View>
 
+                    {/* RESTAURA O ARQUIVO DE BACKUP */}
                     <View style={{ marginTop: 5 }}>
                         <View style={produtoCss.productWindow}>
                             <View style={produtoCss.productContent}>
@@ -87,22 +92,3 @@ export default function bancoDeDados() {
         </SafeAreaProvider>
     );
 };
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        paddingTop: StatusBar.currentHeight,
-    },
-    scrollView: {
-
-    },
-    produtos: {
-        padding: 20,
-        backgroundColor: '#ccc',
-        marginBottom: 12
-    },
-    text: {
-        fontSize: 32,
-        padding: 2,
-    },
-});

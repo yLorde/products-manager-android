@@ -17,8 +17,8 @@ export default async function loadDataBase() {
             );
         `);
 
-        const allRolls = await db.getAllAsync('SELECT * FROM produtos');
-        console.log(`Total de produtos cadastrados: ${allRolls.length}`);
+        const allProducts = await db.getAllAsync('SELECT * FROM produtos');
+        console.log(`Total de produtos cadastrados: ${allProducts.length}`);
         console.log('Banco de dados carregado com sucesso!');
     } catch (err) {
         console.log(err);

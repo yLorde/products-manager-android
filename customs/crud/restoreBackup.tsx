@@ -1,6 +1,6 @@
 import * as SQLite from 'expo-sqlite';
 import { StorageAccessFramework } from 'expo-file-system';
-import addProduto from './addProduto';
+import addProduto from './addProduct';
 import { router } from 'expo-router';
 
 export default async function restoreBackup() {

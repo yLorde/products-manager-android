@@ -1,27 +1,18 @@
-import { IProdutoView } from "@/customs/interfaces/IProduto";
+import { IProductView } from "@/customs/interfaces/IProduct";
 import produtoCss from "@/customs/produtoCss";
 import React from "react";
-import { Button, StatusBar, StyleSheet, Text, View } from "react-native";
-import formatData from "@/customs/functions/formatData";
-import removerProduto from "@/customs/crud/removerProduto";
+import { Button, StyleSheet, Text, View } from "react-native";
+import formatDate from "@/customs/functions/formatDate";
 import loadProducts from "@/customs/functions/loadProducts";
-import VenceEm from "./VenceEm";
+import ExpireOn from "./ExpireOn";
+import removeProduct from "@/customs/crud/removeProduct";
 
-export default function ProductView({ id, nome, restantes, validade, codigoDeBarras, codigoDoMercado }: IProdutoView) {
+export default function ProductView({ id, nome, restantes, validade, codigoDeBarras, codigoDoMercado }: IProductView) {
     const [showDetails, setShowDetails] = React.useState<any>();
     const [products, setProducts] = React.useState<any>([]);
-    const [showRemoverProduto, setShowRemoverProduto] = React.useState<any>();
+    const [showRemoveProduct, setShowRemoveProdut] = React.useState<any>();
 
     const styles = StyleSheet.create({
-        produtos: {
-            padding: 20,
-            backgroundColor: '#ccc',
-            marginBottom: 12
-        },
-        text: {
-            fontSize: 32,
-            padding: 2,
-        },
         produtoText: {
             fontSize: 20,
             marginLeft: 5,
@@ -36,9 +27,9 @@ export default function ProductView({ id, nome, restantes, validade, codigoDeBar
                 <View style={produtoCss.productContent}>
                     <Text style={styles.produtoText}>Nome: {nome}</Text>
                     <Text style={styles.produtoText}>
-                        Vence em: <VenceEm vencimento={validade} />
+                        Vence em: <ExpireOn vencimento={validade} />
                     </Text>
-                    <Text style={styles.produtoText}>Validade: {formatData({ data: validade })}</Text>
+                    <Text style={styles.produtoText}>Validade: {formatDate({ data: validade })}</Text>
 
                     <View style={{
                         display: showDetails === id ? 'block' : 'none' as any, padding: 10
@@ -65,28 +56,28 @@ export default function ProductView({ id, nome, restantes, validade, codigoDeBar
                         }} color={showDetails === id ? '#902020' : '#306030'} title={showDetails === id ? 'Ocultar Detalhes' : 'Mostrar Detalhes'} />
                     </View>
 
-                    <View style={{ padding: 5, display: showRemoverProduto === id ? 'none' : 'flex' }}>
+                    <View style={{ padding: 5, display: showRemoveProduct === id ? 'none' : 'flex' }}>
                         <Button onPress={() => {
-                            setShowRemoverProduto(id);
+                            setShowRemoveProdut(id);
                         }} color='#206090' title='Remover Produto' />
                     </View>
 
                     <View style={{
-                        padding: 5, display: showRemoverProduto === id ? 'flex' : 'none',
+                        padding: 5, display: showRemoveProduct === id ? 'flex' : 'none',
                         alignItems: 'center',
                         justifyContent: 'space-around',
                         flexDirection: 'row'
                     }}>
                         <View >
                             <Button onPress={() => {
-                                setShowRemoverProduto(null);
+                                setShowRemoveProdut(null);
                             }} color='#902020' title='Cancelar' />
                         </View>
 
                         <View >
                             <Button onPress={() => {
-                                setShowRemoverProduto(null);
-                                removerProduto({ id: id });
+                                setShowRemoveProdut(null);
+                                removeProduct({ id: id });
                                 loadProducts().then(res => setProducts(res));
                             }} color='#206090' title='Confirmar' />
                         </View>

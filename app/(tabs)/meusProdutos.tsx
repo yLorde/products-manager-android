@@ -14,6 +14,8 @@ export default function MeusProdutos() {
       <SafeAreaView style={{ flex: 1, paddingTop: StatusBar.currentHeight }} edges={['top']}>
         <ScrollView>
           {
+
+            // Preciso dar uma melhorada nisso depois, quanto mais produtos a pessoa ter mais vai ficar lento.
             products.map((produto: any) => (
               <ProductView
                 codigoDeBarras={produto.codigoDeBarras}
