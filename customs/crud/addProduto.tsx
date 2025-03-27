@@ -1,14 +1,7 @@
 import * as SQLite from 'expo-sqlite';
+import { IProduto } from '../interfaces/IProduto';
 
-interface Produto {
-    nome: string;
-    restantes: String;
-    validade: String;
-    codigoDeBarras: String;
-    codigoDoMercado: String;
-}
-
-export default async function addProduto({ nome, restantes, validade, codigoDeBarras, codigoDoMercado }: Produto) {
+export default async function addProduto({ nome, restantes, validade, codigoDeBarras, codigoDoMercado }: IProduto) {
     try {
         const db = await SQLite.openDatabaseAsync('produtos');
         await db.runAsync(`

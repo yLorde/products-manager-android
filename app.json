@@ -3,7 +3,7 @@
     "name": "Products Manager",
     "productName": "Products Manager",
     "slug": "products-manager",
-    "version": "1.2.3",
+    "version": "1.2.4",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
@@ -17,7 +17,7 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.technext.productsmanager",
+      "package": "br.com.ylorde.productsmanager",
       "permissions": [
         "android.permission.CAMERA",
         "android.permission.WRITE_EXTERNAL_STORAGE",

@@ -2,7 +2,7 @@
   "name": "products-manager",
   "productName": "Products Manager",
   "main": "expo-router/entry",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "scripts": {
     "start": "expo start",
     "reset-project": "node ./scripts/reset-project.js",

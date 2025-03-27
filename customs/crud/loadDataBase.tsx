@@ -2,7 +2,7 @@ import * as SQLite from 'expo-sqlite';
 
 export default async function loadDataBase() {
     try {
-        console.log('Carregando banco de dados...')
+        console.log('Carregando banco de dados...');
         const db = await SQLite.openDatabaseAsync('produtos');
 
         await db.runAsync(`
@@ -18,7 +18,7 @@ export default async function loadDataBase() {
         `);
 
         const allRolls = await db.getAllAsync('SELECT * FROM produtos');
-        console.log(allRolls.length + ' Rolls no total.');
+        console.log(`Total de produtos cadastrados: ${allRolls.length}`);
         console.log('Banco de dados carregado com sucesso!');
     } catch (err) {
         console.log(err);

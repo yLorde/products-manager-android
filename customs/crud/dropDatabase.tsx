@@ -8,7 +8,7 @@ export default async function dropDatabase() {
             alert('Banco de dados apagado com sucesso!');
             router.navigate('/(tabs)');
         });
-        return 'sucess';
+        return true;
     } catch (err) {
         console.log(err);
     };

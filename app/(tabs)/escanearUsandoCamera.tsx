@@ -1,5 +1,5 @@
 import { ScannerScreen } from '@/customs/Scanner';
-import { StyleSheet, Text, ScrollView, StatusBar, View } from 'react-native';
+import { StyleSheet, ScrollView, StatusBar, View } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 
 export default function EscanearUsandoCamera() {
