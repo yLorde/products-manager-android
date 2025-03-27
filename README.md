@@ -3,6 +3,12 @@
 ```
 Versão: 1.2.4
 Extensão da versão: 12_0327-ALPHA
+Número de compilação: jts6h-L2NA5-nuz-AIcsG
+```
+
+```
+Versão: 1.2.4
+Extensão da versão: 12_0327-ALPHA
 Número de compilação: 1VorE-AHkUp-Sfi-dLRi4
 ```
 

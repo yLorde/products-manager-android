@@ -37,7 +37,7 @@ export default function HomeScreen() {
       <View style={{ display: 'flex', bottom: 0 }}>
         <Text style={{ fontSize: 20, color: 'lightgreen', textAlign: 'center' }}>Número de compilação</Text>
         <Text style={{ fontSize: 18, color: 'yellow', textAlign: 'center' }}>v1.2.4-12_0327-ALPHA</Text>
-        <Text style={{ fontSize: 18, color: 'yellow', textAlign: 'center' }}>1VorE-AHkUp-Sfi-dLRi4</Text>
+        <Text style={{ fontSize: 18, color: 'yellow', textAlign: 'center' }}>jts6h-L2NA5-nuz-AIcsG</Text>
       </View>
 
     </View>
